@@ -1,7 +1,6 @@
 <label>Server Name</label>
-<!--<input type="text" class="form-control" (input)="onUpdateServerName($event)">-->
+<input type="text" class="form-control" (input)="onUpdateServerName($event)">
 <input type="text" class="form-control" [(ngModel)]="serverName">
-<!--<p>{{serverName}}</p>-->
 <button
   class="btn btn-primary"
   [disabled]="!allowNewServer"
@@ -18,3 +17,13 @@
 <input type="text" class="form-control" [(ngModel)]="userName">
 <p>{{userName}}</p>
 <button class="btn btn-success" [disabled]="userName === ''" (click)="resetUser()">Reset username</button>
+
+<hr>
+
+<button (click)="onDisplay()">Display details</button>
+<p *ngIf="display">Secret password = tuna</p>
+
+<ul *ngFor="let click of clicks">
+  <li [ngStyle]="{backgroundColor : click >= 5 ? 'blue' : 'transparent'}" [ngClass]="{whiten: click >= 5}">{{click}}</li>
+</ul>
+
