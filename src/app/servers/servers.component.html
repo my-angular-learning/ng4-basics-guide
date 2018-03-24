@@ -9,3 +9,10 @@
   <p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
+
+<hr>
+
+<label>User</label>
+<input type="text" class="form-control" [(ngModel)]="userName">
+<p>{{userName}}</p>
+<button class="btn btn-success" [disabled]="userName === ''" (click)="resetUser()">Reset username</button>
